@@ -1,0 +1,24 @@
+.navbar{
+    display: flex;
+    background-color: white;
+    border-bottom:groove darkgray; 
+}
+
+.logo{
+    min-height: 9%;
+    max-width: 9%;
+}
+
+/* .navbar-links{
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+} */
+
+.navbar-links-items{
+    display: inline-block;
+    margin: 0%;
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 15px;
+}
