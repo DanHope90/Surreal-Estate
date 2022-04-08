@@ -7,15 +7,13 @@ import AddProperty from "./AddProperty";
 
 function App() {
   return (
-    <body className="body">
-      <div className="App">
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Properties} />
-          <Route exact path="/add-property" component={AddProperty} />
-        </Switch>
-      </div>
-    </body>
+    <div className="App">
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Properties} />
+        <Route exact path="/add-property" component={AddProperty} />
+      </Switch>
+    </div>
   );
 }
 
