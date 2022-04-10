@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../styles/AddProperty.css";
 
 function AddProperty() {
@@ -8,6 +9,7 @@ function AddProperty() {
       city: "Manchester",
       Type: "Flat",
       bedrooms: "",
+      bathrooms: "",
       price: "",
       email: "",
     },
@@ -17,7 +19,14 @@ function AddProperty() {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    axios
+      .post(`http://localhost:3000/api/v1/PropertyListing`, { ...fields })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleFieldChange = (event) => {
@@ -80,6 +89,21 @@ function AddProperty() {
                 id="bedrooms"
                 name="bedrooms"
                 value={fields.bedrooms}
+                onChange={handleFieldChange}
+              >
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+              </select>
+            </label>
+            <label htmlFor="bathrooms">
+              Bathrooms
+              <select
+                id="bathrooms"
+                name="bathrooms"
+                value={fields.bathrooms}
                 onChange={handleFieldChange}
               >
                 <option value="1"> 1</option>
