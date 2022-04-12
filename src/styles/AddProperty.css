@@ -1,13 +1,50 @@
-.AddProp { 
-  padding: 2%;  
-  text-align: left;
+/* *{ background-color: white;} */
+
+.AddProp {
+  }
+
+.AddProp .Form{
+  color: black;
+  background-color: rgb(47, 162, 190);
+  padding: 5%;
+  margin: 1rem;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .Form{
-    color: black;
-   
+  /* background-color: white;
+  /* color: black; */
+  /* border: 1px red solid ; */
+  /* padding: 2%;
+  font-size: 20px;
+  display: flex;
+  justify-content:center;
+  align-items: baseline;
+  margin: 3rem; */
+  /* padding: 5%; */
+  /* } */ 
 }
 
-.AddProp-Button{
+.label, input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140mm;
+  padding: 2px;
+  margin: 0.2rem;
+  padding: 5px;
 
+}
+
+.label, select{
+  display: block;
+  justify-content: center;
+  width: 144mm;
+  padding: 2px;
+  margin: 0.2rem;
+  padding: 5px;
 }
