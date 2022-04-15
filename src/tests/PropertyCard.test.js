@@ -29,7 +29,7 @@ describe("PropertyCard", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it("renders correct props", () => {
+  it("renders correct prop values", () => {
     const { getByText, getByTestId } = render(
       <PropertyCard
         title={validProps.fields.title}
