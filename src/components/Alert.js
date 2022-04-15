@@ -11,7 +11,6 @@ function Alert({ message, success }) {
       {message}
     </div>
   );
-  // <div className=`Alert alert-${success ? "success" : "error"}` />
 }
 
 export default Alert;

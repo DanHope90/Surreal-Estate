@@ -1,19 +1,40 @@
-import React from "react";
-// import PropTypes from "prop-types";
+import { React, useState, useEffect } from "react";
+import axios from "axios";
 import PropertyCard from "./PropertyCard";
+import Alert from "./Alert";
+import "../styles/Properties.css";
 
 function Properties() {
+  const initialState = {
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
+  };
+
+  const [properties, setProperties] = useState([]);
+  const [alert, setAlert] = useState(initialState.alert);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/v1/PropertyListing`)
+      .then(({ data }) => setProperties(data))
+      .catch(() => {
+        setAlert({
+          message: "Axios promise rejected",
+          isSuccess: false,
+        });
+      });
+  }, []);
+
   return (
     <div className="properties">
-      <PropertyCard
-        title="Big House"
-        type="House"
-        bedrooms="5"
-        bathrooms="2"
-        city="Manchester"
-        price="200000"
-        email="house@gmail.com"
-      />
+      {properties.map((property) => (
+        <div key={property.id} className="col">
+          <PropertyCard {...property} />
+        </div>
+      ))}
+      <Alert message={alert.message} success={alert.isSuccess} />
     </div>
   );
 }

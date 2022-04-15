@@ -9,7 +9,7 @@ function AddProperty() {
     fields: {
       title: "",
       city: "Manchester",
-      Type: "Flat",
+      type: "Flat",
       bedrooms: "",
       bathrooms: "",
       price: "",
