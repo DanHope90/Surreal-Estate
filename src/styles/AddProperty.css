@@ -1,13 +1,14 @@
 /* *{ background-color: white;} */
 
 .AddProp {
+  padding: 5rem;
   }
 
-.AddProp .Form{
+.Form{
   color: black;
   background-color: rgb(47, 162, 190);
   padding: 5%;
-  margin: 1rem;
+  margin: 2rem;
   font-size: 20px;
   display: flex;
   flex-direction: column;

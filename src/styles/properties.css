@@ -1,4 +1,10 @@
 .properties{
-    display: flex;
-    flex-flow: wrap;
+    padding: 0.5rem;
+}
+
+.properties > .col {
+    display: inline-block;
+  width: 33.33%;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
