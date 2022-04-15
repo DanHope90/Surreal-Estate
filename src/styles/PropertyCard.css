@@ -1,0 +1,14 @@
+.property-card {
+font-weight: bold;
+  background-color: white;
+  margin: 20px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(47, 162, 190);
+}

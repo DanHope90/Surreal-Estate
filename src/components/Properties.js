@@ -1,23 +1,13 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import PropertyCard from "./AddProperty";
+import PropertyCard from "./PropertyCard";
 
 function Properties() {
-  // const propertyProps = {
-  //   title: "3 bed house",
-  //   city: "Manchester",
-  //   type: "Semi-Detached",
-  //   bedrooms: "3",
-  //   bathrooms: "2",
-  //   price: "200000",
-  //   email: "dummy@email.com",
-  // };
   return (
-    <div className="property-card">
-      <h2>Properties Page</h2>
+    <div className="properties">
       <PropertyCard
-        title="big house"
-        type="house"
+        title="Big House"
+        type="House"
         bedrooms="5"
         bathrooms="2"
         city="Manchester"

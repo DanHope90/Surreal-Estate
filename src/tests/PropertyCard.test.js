@@ -44,9 +44,9 @@ describe("PropertyCard", () => {
     expect(getByText("Stub Title")).toHaveClass("title");
     expect(getByText("Stub City")).toHaveClass("city");
     expect(getByText("Stub Type")).toHaveClass("type");
-    expect(getByText(1)).toHaveClass("bathrooms");
-    expect(getByText(2)).toHaveClass("bedrooms");
-    expect(getByText(100000)).toHaveClass("price");
+    expect(getByTestId("card-bathrooms")).toHaveClass("bathrooms");
+    expect(getByTestId("card-bedrooms")).toHaveClass("bedrooms");
+    expect(getByTestId("card-price")).toHaveClass("price");
     expect(getByTestId("cardId-email")).toHaveClass("email");
   });
 });
