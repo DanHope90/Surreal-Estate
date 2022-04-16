@@ -1,0 +1,11 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+background-color: white;
+width: 150px;
+ position: fixed;
+height: 100%;
+align-items: left;
+border: solid black;
+}
+
