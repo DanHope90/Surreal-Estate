@@ -21,3 +21,12 @@ border: solid black;
     align-items: flex-start;
     padding: 5%;
    }
+
+   .search-input {
+      width: 30mm;
+   }
+
+   button {
+       padding: 0px;
+       margin: 4px;
+   }

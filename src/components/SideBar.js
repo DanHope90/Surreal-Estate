@@ -1,24 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/SideBar.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 
-const buildQueryString = (operation, valueObj) => {
+function SideBar() {
   const { search } = useLocation();
+  const buildQueryString = (operation, valueObj) => {
+    const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+    const newQueryParams = {
+      ...currentQueryParams,
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
+    };
 
-  const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
-
-  const newQueryParams = {
-    ...currentQueryParams,
-    [operation]: JSON.stringify(valueObj),
+    return qs.stringify(newQueryParams, {
+      addQueryPrefix: true,
+      encode: false,
+    });
   };
 
-  return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
-};
+  const [query, setQuery] = useState("");
 
-function SideBar() {
+  const history = useHistory();
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
+      <form className="search-title" onSubmit={handleSearch}>
+        <input
+          className="search-input"
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search"
+        />
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
       <h2>Filter City</h2>
       <ul className="sidebar-ul-city">
         <Link to={buildQueryString("query", { city: "Manchester" })}>
@@ -41,7 +69,6 @@ function SideBar() {
           Price Descending
         </Link>
       </ul>
-      {/* ?sort={"<field_to_sort_by>":1} (1 is sort ascending, -1 is sort descending). */}
     </div>
   );
 }
