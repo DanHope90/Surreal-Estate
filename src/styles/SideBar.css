@@ -1,11 +1,23 @@
-.sidebar{
+.sidebar {
     display: flex;
     flex-direction: column;
 background-color: white;
 width: 150px;
  position: fixed;
 height: 100%;
-align-items: left;
 border: solid black;
 }
 
+.sidebar-ul-city {
+ display: flex; 
+ flex-direction: column;
+ align-items: flex-start;
+ padding: 5%;
+}
+
+.sidebar-ul-sort {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5%;
+   }
