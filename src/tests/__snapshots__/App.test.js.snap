@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="navbar"
+    >
+      <img
+        alt="nav-logo"
+        class="logo"
+        src="logo.png"
+      />
+      <ul>
+        <a
+          class="navbar-links-items"
+          href="/"
+        >
+          View Properties
+        </a>
+        <a
+          class="navbar-links-items"
+          href="/add-property"
+        >
+          Add Property
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div
+      class="sidebar"
+    >
+      <h2>
+        Filter by city
+      </h2>
+      <ul
+        class="sidebar-ul"
+      >
+        <a
+          href="/?query={'city': 'Manchester'}"
+        >
+          Manchester
+        </a>
+        <a
+          href="/?query={'city': 'Leeds'}"
+        >
+          Leeds
+        </a>
+        <a
+          href="/?query={'city': 'Sheffield'}"
+        >
+          Sheffield
+        </a>
+        <a
+          href="/?query={'city': 'Liverpool'}"
+        >
+          Liverpool
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="properties"
+  />
+</DocumentFragment>
+`;
