@@ -1,25 +1,41 @@
 .navbar{
-    display: flex;
-    flex-direction: row;
     background-color: white;
-    border-bottom:groove black; 
+  border-bottom: grey thin;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: uppercase;
 }
 
 .logo{
-    min-height: 9%;
-    max-width: 10%;
+
+    width: 150px;
 }
 
-/* .navbar-links{
-    padding: 0px;
-    list-style-type: none;
-    text-align: center;
-} */
+.ul-list {
+    padding: 0%;
 
-.navbar-links-items{
+}
+.navbar-links-main{
     display: inline-block;
     margin: 0%;
     font-size: 15px;
     padding-left: 0px;
     padding-right: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-links-addProps{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.facebook-login {
+    display: flex;
+    flex-direction: column;
+    padding: 0.15rem;
+    
 }
