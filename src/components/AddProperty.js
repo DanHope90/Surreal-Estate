@@ -8,8 +8,8 @@ function AddProperty() {
   const initialState = {
     fields: {
       title: "",
-      city: "Manchester",
-      type: "Flat",
+      city: "",
+      type: "",
       bedrooms: "",
       bathrooms: "",
       price: "",
@@ -57,6 +57,9 @@ function AddProperty() {
   return (
     <div className="AddProp">
       <form className="Form" onSubmit={handleAddProperty}>
+        <div className="div-alert">
+          <Alert message={alert.message} success={alert.isSuccess} />
+        </div>
         <label htmlFor="title">
           Property Description
           <input
@@ -64,7 +67,7 @@ function AddProperty() {
             name="title"
             value={fields.title}
             onChange={handleFieldChange}
-            placeholder="Type here.."
+            placeholder="e.g. 2 bed flat Manchester"
           />
           <label htmlFor="city">
             City
@@ -74,10 +77,10 @@ function AddProperty() {
               value={fields.city}
               onChange={handleFieldChange}
             >
-              <option value="manchester"> Manchester</option>
-              <option value="liverpool"> Liverpool</option>
-              <option value="sheffield"> Sheffield</option>
-              <option value="leeds"> Leeds</option>
+              <option value="Manchester"> Manchester</option>
+              <option value="Liverpool"> Liverpool</option>
+              <option value="Sheffield"> Sheffield</option>
+              <option value="Leeds"> Leeds</option>
             </select>
             <label htmlFor="type">
               Type
@@ -145,7 +148,7 @@ function AddProperty() {
                 name="email"
                 value={fields.email}
                 onChange={handleFieldChange}
-                placeholder="Type here..."
+                placeholder="e.g. surreal-estate@email.com"
               />
             </label>
           </label>
@@ -153,7 +156,6 @@ function AddProperty() {
             Add
           </button>
         </label>
-        <Alert message={alert.message} success={alert.isSuccess} />
       </form>
     </div>
   );
