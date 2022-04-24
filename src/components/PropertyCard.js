@@ -1,24 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
+import { MdLocationCity } from "react-icons/md";
+import { IoBedSharp } from "react-icons/io5";
+import { GiBathtub } from "react-icons/gi";
 
-function PropertyCard(props) {
-  const { title, city, type, bedrooms, bathrooms, price, email } = props;
+function PropertyCard({
+  title,
+  city,
+  type,
+  bedrooms,
+  bathrooms,
+  price,
+  email,
+  userID,
+  onSaveProperty,
+  _id,
+}) {
   return (
     <div className="property-card">
       <div className="title" data-testid="card-title">
         {title}
       </div>
       <div className="city" data-testid="card-city">
+        <MdLocationCity />
         {city}
       </div>
       <div className="type" data-testid="card-type">
         {type}
       </div>
       <div className="bedrooms" data-testid="card-bedrooms">
+        <IoBedSharp />
         Bedrooms:{bedrooms}
       </div>
       <div className="bathrooms" data-testid="card-bathrooms">
+        <GiBathtub />
         Bathrooms:{bathrooms}
       </div>
       <div className="price" data-testid="card-price">
@@ -27,6 +43,13 @@ function PropertyCard(props) {
       <div className="email" data-testid="cardId-email">
         <a href={`mailto:${email}`}>Send Email</a>
       </div>
+      {userID && (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a href="#" onClick={() => onSaveProperty(_id)} className="save">
+          <i className=" fas fa-star" />
+          Save
+        </a>
+      )}
     </div>
   );
 }
@@ -34,11 +57,14 @@ function PropertyCard(props) {
 export default PropertyCard;
 
 PropertyCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  bedrooms: PropTypes.number.isRequired,
-  bathrooms: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
-  email: PropTypes.string.isRequired,
-};
+  title: PropTypes.string,
+  city: PropTypes.string,
+  type: PropTypes.string,
+  bedrooms: PropTypes.number,
+  bathrooms: PropTypes.number,
+  price: PropTypes.number,
+  email: PropTypes.string,
+  userID: PropTypes.number,
+  onSaveProperty: PropTypes.func,
+  _id: PropTypes.number,
+}.isRequired;
