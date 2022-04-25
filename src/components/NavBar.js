@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 import PropTypes from "prop-types";
+import { VscSignOut } from "react-icons/vsc";
 import logo from "../logo.png";
 
 function NavBar({ userID, onLogout, onLogin }) {
@@ -17,18 +18,20 @@ function NavBar({ userID, onLogout, onLogin }) {
           Add Property
         </Link>
       </ul>
-      {userID ? (
-        <button type="submit" onClick={onLogout}>
-          Sign Out
-        </button>
-      ) : (
-        <FacebookLogin
-          appId="715135646329687"
-          autoLoad
-          callback={onLogin}
-          textButton="Login"
-        />
-      )}
+      <div className="login-button">
+        {userID ? (
+          <button type="submit" onClick={onLogout}>
+            <VscSignOut /> Sign Out
+          </button>
+        ) : (
+          <FacebookLogin
+            appId="715135646329687"
+            autoLoad
+            callback={onLogin}
+            textButton="Login"
+          />
+        )}
+      </div>
     </div>
   );
 }

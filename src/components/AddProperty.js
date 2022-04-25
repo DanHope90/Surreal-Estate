@@ -90,13 +90,13 @@ function AddProperty() {
                 value={fields.type}
                 onChange={handleFieldChange}
               >
-                <option value="flat"> Flat</option>
-                <option value="detached"> Detached</option>
-                <option value="semi-detached"> Semi-Detached</option>
-                <option value="terraced"> Terraced</option>
-                <option value="end-of-terraced"> End of Terraced</option>
-                <option value="cottage"> Cottage</option>
-                <option value="bungalow"> Bungalow</option>
+                <option value="Flat"> Flat</option>
+                <option value="Detached"> Detached</option>
+                <option value="Semi-Detached"> Semi-Detached</option>
+                <option value="Terraced"> Terraced</option>
+                <option value="End-of-Terraced"> End of Terraced</option>
+                <option value="Cottage"> Cottage</option>
+                <option value="Bungalow"> Bungalow</option>
               </select>
             </label>
             <label htmlFor="bedrooms">

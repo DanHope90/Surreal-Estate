@@ -4,6 +4,10 @@ import "../styles/PropertyCard.css";
 import { MdLocationCity } from "react-icons/md";
 import { IoBedSharp } from "react-icons/io5";
 import { GiBathtub } from "react-icons/gi";
+import { RiMoneyPoundCircleFill } from "react-icons/ri";
+import { AiOutlineSend } from "react-icons/ai";
+import { FaHouseUser } from "react-icons/fa";
+import { TiTickOutline } from "react-icons/ti";
 
 function PropertyCard({
   title,
@@ -27,7 +31,7 @@ function PropertyCard({
         {city}
       </div>
       <div className="type" data-testid="card-type">
-        {type}
+        <FaHouseUser /> {type}
       </div>
       <div className="bedrooms" data-testid="card-bedrooms">
         <IoBedSharp />
@@ -38,16 +42,19 @@ function PropertyCard({
         Bathrooms:{bathrooms}
       </div>
       <div className="price" data-testid="card-price">
-        £:{price}
+        <RiMoneyPoundCircleFill />
+        {price}
       </div>
       <div className="email" data-testid="cardId-email">
-        <a href={`mailto:${email}`}>Send Email</a>
+        <a href={`mailto:${email}`}>
+          <AiOutlineSend /> Email
+        </a>
       </div>
       {userID && (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" onClick={() => onSaveProperty(_id)} className="save">
           <i className=" fas fa-star" />
-          Save
+          <TiTickOutline /> Save
         </a>
       )}
     </div>
