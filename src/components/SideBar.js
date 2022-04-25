@@ -52,23 +52,43 @@ function SideBar() {
       </form>
       <h2>Filter City:</h2>
       <ul className="sidebar-ul-city">
-        <Link to={buildQueryString("query", { city: "Manchester" })}>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("query", { city: "Manchester" })}
+        >
           Manchester
         </Link>
-        <Link to={buildQueryString("query", { city: "Leeds" })}>Leeds</Link>
-        <Link to={buildQueryString("query", { city: "Sheffield" })}>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("query", { city: "Leeds" })}
+        >
+          Leeds
+        </Link>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("§query", { city: "Sheffield" })}
+        >
           Sheffield
         </Link>
-        <Link to={buildQueryString("query", { city: "Liverpool" })}>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("query", { city: "Liverpool" })}
+        >
           Liverpool
         </Link>
       </ul>
       <h2>Sort By:</h2>
       <ul className="sidebar-ul-sort">
-        <Link to={buildQueryString("sort", { price: -1 })}>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("sort", { price: -1 })}
+        >
           Price Ascending
         </Link>
-        <Link to={buildQueryString("sort", { price: 1 })}>
+        <Link
+          style={{ color: "white" }}
+          to={buildQueryString("sort", { price: 1 })}
+        >
           Price Descending
         </Link>
       </ul>
