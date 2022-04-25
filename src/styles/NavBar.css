@@ -1,14 +1,13 @@
 .navbar{
-    background-color: white;
-  border-bottom: grey thin;
+   
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
 }
 
 .logo{
-
     width: 150px;
 }
 
@@ -17,25 +16,25 @@
 
 }
 .navbar-links-main{
-    display: inline-block;
     margin: 0%;
-    font-size: 15px;
+    font-size: 18px;
     padding-left: 0px;
-    padding-right: 15px;
+    padding-right: 30px;
     text-decoration: none;
-    color: black;
+    color: rgb(73, 72, 72);
     font-weight: bold;
+    
 }
 
 .navbar-links-addProps{
-    text-decoration: none;
-    color: black;
+    font-size: 18px;
+    color: rgb(73, 72, 72);
     font-weight: bold;
 }
 
-.facebook-login {
-    display: flex;
-    flex-direction: column;
-    padding: 0.15rem;
-    
+.login-button {
+    /* display: block; */
+    font-weight: bold;
+align-self: center;
+
 }

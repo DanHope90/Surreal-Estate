@@ -1,24 +1,19 @@
-.alert-success, .alert-error{
-    width: 144mm;
-    height: 25px;
-    text-align: center;
+
+.div-alert{
     display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-
-
-
+    flex-direction: row;
+    justify-content: center
 }
 
 .alert-success {
     background-color: lightgreen;
-    border-color: black;
-    display: flex;
-    justify-items: baseline;
+    padding: 1%;
+    border-radius: 1%;
 }
 .alert-error {
     background-color: red;
     border-color: black;
+    padding: 1%;
+    border-radius: 1%;
 
 }
